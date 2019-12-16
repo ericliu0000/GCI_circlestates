@@ -62,14 +62,14 @@ def draw(large_circle, small_circle, distance, text):
     pygame.draw.circle(gameDisplay, red, (center_2, y_offset), small_circle, 1)
 
 
+# Canvas initialization (600 by 700 pixels)
 pygame.init()
 gameDisplay = pygame.display.set_mode((600, 700))
 pygame.display.set_caption("State of Two Circles")
 
-display_text = message(circle_1, circle_2, distance)
-draw(int(radius_1), int(radius_2), int(draw_distance), display_text)
+draw(int(radius_1), int(radius_2), int(draw_distance), message(circle_1, circle_2, distance))
 
-while True:
+while True: # update loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
